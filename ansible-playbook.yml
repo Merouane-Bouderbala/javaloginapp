@@ -19,21 +19,21 @@
         dest: /opt/docker
 
     - name: stop current container
-      command: docker stop Merouane-devops-container-2
+      command: docker stop merouane-devops-container-2
       ignore_errors: yes # in case container doesn’t exist
 
     - name: remove stopped container
-      command: docker rm Merouane-devops-container-2
+      command: docker rm merouane-devops-container-2
       ignore_errors: yes # in case container doesn’t exist
 
     - name: remove docker images 
-      command: docker rmi Merouane-devops-image-2:latest
+      command: docker rmi merouane-devops-image-2:latest
       ignore_errors: yes # in case image does not exist
 
     - name: create docker image using war file
-      command: docker build -t Merouane-devops-image-2:latest .
+      command: docker build -t merouane-devops-image-2:latest .
       args:
         chdir: /opt/docker
 
     - name: run container from docker image
-      command: docker run -d --name Merouane-devops-container-2 -p 8082:8080 Merouane-devops-image-2:latest
+      command: docker run -d --name merouane-devops-container-2 -p 8082:8080 merouane-devops-image-2:latest
