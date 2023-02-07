@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-MAINTAINER <YOUR_NAME_HERE>
+MAINTAINER merouane
 
 COPY ./webapp.war /usr/local/tomcat/webapps
 
